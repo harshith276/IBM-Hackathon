@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes - RECOOK BOOK</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-utensils"></i>
+                <span>RECOOK BOOK</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="recipes.html" class="nav-link active">
+                        <i class="fas fa-book-open"></i> Recipes
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="add-recipe.html" class="nav-link">
+                        <i class="fas fa-plus-circle"></i> Add Recipe
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tips.html" class="nav-link">
+                        <i class="fas fa-lightbulb"></i> Tips
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="auth-btn-nav login-btn-nav">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="signup.html" class="auth-btn-nav signup-btn-nav">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-book-open"></i> Leftover Recipes</h1>
+            <p>Discover amazing recipes that transform your leftovers into delicious meals</p>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="recipe-search" placeholder="Search recipes by name or ingredient...">
+                </div>
+                <div class="filter-controls">
+                    <select id="category-filter">
+                        <option value="">All Categories</option>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                        <option value="snack">Snack</option>
+                        <option value="dessert">Dessert</option>
+                    </select>
+                    <select id="sort-filter">
+                        <option value="newest">Newest First</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="alphabetical">A-Z</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipes Grid -->
+    <section class="recipes-section">
+        <div class="container">
+            <div class="recipes-stats">
+                <p><span id="recipe-count">0</span> recipes found</p>
+            </div>
+            <div class="recipes-grid" id="all-recipes">
+                <!-- Recipes will be loaded here by JavaScript -->
+            </div>
+            <div class="no-recipes" id="no-recipes" style="display: none;">
+                <div class="no-recipes-content">
+                    <i class="fas fa-search"></i>
+                    <h3>No recipes found</h3>
+                    <p>Try adjusting your search or filters, or be the first to add a recipe!</p>
+                    <a href="add-recipe.html" class="btn btn-primary">Add First Recipe</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-utensils"></i>
+                        <span>RECOOK BOOK</span>
+                    </div>
+                    <p>Fighting food waste one recipe at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="add-recipe.html">Add Recipe</a></li>
+                        <li><a href="tips.html">Tips</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RECOOK BOOK. All rights reserved. Made with ❤️ for a sustainable future.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth-guard.js"></script>
+</body>
+</html>

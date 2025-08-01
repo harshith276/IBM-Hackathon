@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe - RECOOK BOOK</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-utensils"></i>
+                <span>RECOOK BOOK</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="recipes.html" class="nav-link">
+                        <i class="fas fa-book-open"></i> Recipes
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="add-recipe.html" class="nav-link active">
+                        <i class="fas fa-plus-circle"></i> Add Recipe
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tips.html" class="nav-link">
+                        <i class="fas fa-lightbulb"></i> Tips
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="auth-btn-nav login-btn-nav">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="signup.html" class="auth-btn-nav signup-btn-nav">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-plus-circle"></i> Share Your Leftover Recipe</h1>
+            <p>Help others reduce food waste by sharing your creative leftover recipes</p>
+        </div>
+    </section>
+
+    <!-- Recipe Form -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <form id="recipe-form" class="recipe-form">
+                    <div class="form-group">
+                        <label for="recipe-title">
+                            <i class="fas fa-heading"></i> Recipe Title *
+                        </label>
+                        <input type="text" id="recipe-title" name="title" required 
+                               placeholder="e.g., Leftover Rice Fried Rice">
+                        <div class="error-message" id="title-error"></div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="recipe-category">
+                                <i class="fas fa-tags"></i> Category *
+                            </label>
+                            <select id="recipe-category" name="category" required>
+                                <option value="">Select Category</option>
+                                <option value="breakfast">Breakfast</option>
+                                <option value="lunch">Lunch</option>
+                                <option value="dinner">Dinner</option>
+                                <option value="snack">Snack</option>
+                                <option value="dessert">Dessert</option>
+                            </select>
+                            <div class="error-message" id="category-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prep-time">
+                                <i class="fas fa-clock"></i> Prep Time (minutes) *
+                            </label>
+                            <input type="number" id="prep-time" name="prepTime" required 
+                                   min="1" max="300" placeholder="30">
+                            <div class="error-message" id="prep-time-error"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="leftover-ingredients">
+                            <i class="fas fa-recycle"></i> Leftover Ingredients Used *
+                        </label>
+                        <textarea id="leftover-ingredients" name="leftoverIngredients" required 
+                                  placeholder="List the leftover ingredients this recipe uses (one per line)&#10;e.g., Cooked rice&#10;Leftover vegetables&#10;Day-old bread"></textarea>
+                        <div class="error-message" id="leftover-ingredients-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additional-ingredients">
+                            <i class="fas fa-shopping-cart"></i> Additional Ingredients Needed
+                        </label>
+                        <textarea id="additional-ingredients" name="additionalIngredients" 
+                                  placeholder="List any fresh ingredients needed (one per line)&#10;e.g., 2 eggs&#10;1 onion&#10;Salt and pepper"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipe-instructions">
+                            <i class="fas fa-list-ol"></i> Cooking Instructions *
+                        </label>
+                        <textarea id="recipe-instructions" name="instructions" required 
+                                  placeholder="Write step-by-step instructions&#10;1. Heat oil in a pan&#10;2. Add onions and cook until soft&#10;3. Add leftover rice and vegetables&#10;4. Stir-fry for 5 minutes&#10;5. Season with salt and pepper"></textarea>
+                        <div class="error-message" id="instructions-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipe-tips">
+                            <i class="fas fa-lightbulb"></i> Tips & Variations
+                        </label>
+                        <textarea id="recipe-tips" name="tips" 
+                                  placeholder="Share any helpful tips or variations for this recipe"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="author-name">
+                            <i class="fas fa-user"></i> Your Name *
+                        </label>
+                        <input type="text" id="author-name" name="author" required 
+                               placeholder="Enter your name or nickname">
+                        <div class="error-message" id="author-error"></div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="resetForm()">
+                            <i class="fas fa-undo"></i> Reset Form
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Share Recipe
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Success Message -->
+                <div id="success-message" class="success-message" style="display: none;">
+                    <div class="success-content">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Recipe Shared Successfully!</h3>
+                        <p>Your recipe has been added to the community recipe board and is now visible to everyone. Thank you for contributing to our food waste reduction community!</p>
+                        <div class="success-actions">
+                            <a href="recipes.html" class="btn btn-primary">
+                                <i class="fas fa-eye"></i> View in Community Board
+                            </a>
+                            <button onclick="addAnotherRecipe()" class="btn btn-secondary">
+                                <i class="fas fa-plus"></i> Add Another Recipe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-utensils"></i>
+                        <span>RECOOK BOOK</span>
+                    </div>
+                    <p>Fighting food waste one recipe at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="add-recipe.html">Add Recipe</a></li>
+                        <li><a href="tips.html">Tips</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RECOOK BOOK. All rights reserved. Made with ❤️ for a sustainable future.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="auth-guard.js"></script>
+</body>
+</html>
